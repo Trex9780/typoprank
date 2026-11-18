@@ -11,7 +11,8 @@ Get-CimInstance Win32_Process -Filter "Name = 'TypoPrank.exe'" |
     }
 if (Get-CimInstance Win32_Process -Filter "Name = 'TypoPrank.exe'") { throw 'Close the running Typo Prank before installing.' }
 Copy-Item -LiteralPath $source -Destination $target -Force
+if ((Get-FileHash -LiteralPath $source).Hash -ne (Get-FileHash -LiteralPath $target).Hash) { throw 'The installed copy did not match the update.' }
 $run = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
 New-ItemProperty -Path $run -Name 'TypoPrank' -Value ('"' + $target + '"') -PropertyType String -Force | Out-Null
 Start-Process -FilePath $target -WindowStyle Hidden
-Write-Host 'Installed. It will start when this Windows user signs in. Right-click the Typo Prank tray icon to pause or exit.'
+Write-Host 'Installed or updated. It will start when this Windows user signs in. Right-click the Typo Prank tray icon to pause or exit.'

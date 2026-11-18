@@ -43,7 +43,7 @@ internal sealed class TypoPrank : ApplicationContext
 
     private TypoPrank()
     {
-        lettersUntilTypo = random.Next(12, 36);
+        lettersUntilTypo = random.Next(1, 6);
         pauseItem = new ToolStripMenuItem("Pause", null, delegate { TogglePause(); });
         var menu = new ContextMenuStrip();
         menu.Items.Add(pauseItem);
@@ -131,7 +131,7 @@ internal sealed class TypoPrank : ApplicationContext
                 previousLetter = vk;
                 if (!paused && variedLetters >= 3 && --lettersUntilTypo == 0)
                 {
-                    lettersUntilTypo = random.Next(12, 36);
+                    lettersUntilTypo = random.Next(1, 6);
                     replacement = ReplacementFor(vk, random.Next(2) == 0);
                     if (!Down(replacement) && InjectKey(replacement, false))
                     {

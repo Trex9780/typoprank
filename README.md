@@ -1,4 +1,4 @@
-Typo Prank v2 for Windows
+Typo Prank v3 for Windows
 ========================
 
 On GitHub, choose Code > Download ZIP, then extract the ZIP.
@@ -7,12 +7,15 @@ Double-click Install.cmd to install for the current Windows user. It copies
 TypoPrank.exe to Local AppData, starts it, and adds a Windows sign-in startup
 entry. No administrator access is needed. A visible Typo Prank icon appears in
 the system tray. Right-click it to pause, resume, or exit.
-Installing this version stops an older running Typo Prank instance first.
+Running Install.cmd again stops the older running instance and replaces its
+installed executable. There is no need to uninstall the old version first.
 
 Every A-Z letter can occasionally become a nearby QWERTY key. The gap varies
-between 12 and 35 eligible letter presses, so changes do not follow a fixed rhythm.
+between 1 and 5 eligible letter presses, so changes do not follow a fixed rhythm.
 Repeated presses of one letter do not trigger changes; a word needs several
 different letters in a row before one can change.
+To test, manually type abcdefghijklmnopqrstuvwxyz in Notepad rather than
+pasting it. A letter should change by the seventh character.
 It does not save or send keystrokes. Shortcuts using Ctrl, Alt, or the Windows
 key are left alone.
 
