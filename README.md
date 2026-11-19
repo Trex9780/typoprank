@@ -1,4 +1,4 @@
-Typo Prank v3 for Windows
+Typo Prank v4 for Windows (C++)
 ========================
 
 On GitHub, choose Code > Download ZIP, then extract the ZIP.
@@ -20,7 +20,9 @@ It does not save or send keystrokes. Shortcuts using Ctrl, Alt, or the Windows
 key are left alone.
 
 Double-click Uninstall.cmd to stop it and remove the startup entry and installed
-file. It may also need .NET Framework 4.x, which is usually present on Windows.
+file. The executable is native C++ and does not need .NET. To rebuild it, run
+Build.cmd with Visual Studio C++ Build Tools installed.
+The included executable targets 64-bit Windows.
 The executable is unsigned, so Windows may show a security warning.
 
 Because the effect is global, it can affect passwords and other important text.
